@@ -14,7 +14,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/dormBuild/*","/dormManager/*","/student/*","/record/*"})
+@WebFilter(urlPatterns = {"/dormBuild/*", "/dormManager/*", "/student/*", "/record/*"})
 //@WebFilter("/*")
 public class LoginFilter implements Filter {
 
@@ -31,31 +31,31 @@ public class LoginFilter implements Filter {
         User user = (User) request.getSession().getAttribute("user");
 //        System.out.println(user);
         //判断user是否为空
-        if(user != null) {
-            //放行
-            chain.doFilter(req, resp);
-        }else{
+        if (user != null) {
+                //放行
+                chain.doFilter(req, resp);
+        } else {
             //自动登录功能的实现
             Cookie cookie = CookieUtils.getCookieByName("cookie_name_pass", request);
-            if(cookie != null){
+            if (cookie != null) {
                 String stuCodePass = cookie.getValue();
                 String[] code_pass = stuCodePass.split("_");
                 u.setStuCode(code_pass[0]);
                 u.setPassword(code_pass[1]);
                 User login_user = userService.login(u);
-                if(login_user != null){
-                    request.getSession().setAttribute("user",login_user);
+                if (login_user != null) {
+                    request.getSession().setAttribute("user", login_user);
                     //放行
                     chain.doFilter(req, resp);
-                }else{
+                } else {
                     //没有登录。给出提示信息，跳转到登陆页面
-                    request.setAttribute("error","请登录！");
-                    request.getRequestDispatcher("/index.jsp").forward(request,resp);
+                    request.setAttribute("error", "请登录！");
+                    request.getRequestDispatcher("/index.jsp").forward(request, resp);
                 }
-            }else{
+            } else {
                 //没有登录。给出提示信息，跳转到登陆页面
-                request.setAttribute("error","请登录！");
-                request.getRequestDispatcher("/index.jsp").forward(request,resp);
+                request.setAttribute("error", "请登录！");
+                request.getRequestDispatcher("/index.jsp").forward(request, resp);
             }
 
         }

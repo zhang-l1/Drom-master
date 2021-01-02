@@ -1,7 +1,7 @@
 <%--
   Created by IntelliJ IDEA.
-  User: nzp
-  Date: 2020/6/7
+  User: zl
+  Date: 2020/12/29
   Time: 21:10
   To change this template use File | Settings | File Templates.
 --%>
@@ -37,7 +37,7 @@
     <div class="data_list_title">
         宿舍管理员管理
     </div>
-    <form name="myForm" class="form-search" method="post" action="dormManager.action?action=list">
+    <form name="myForm" class="form-search" method="post" action=""dormManager.action?action=list>
         <button class="btn btn-success" type="button" style="margin-right: 50px;"
                 onclick="javascript:location.href='${pageContext.request.contextPath}/dormManager/addManager?para=add'">添加</button>
         <span class="data_search">

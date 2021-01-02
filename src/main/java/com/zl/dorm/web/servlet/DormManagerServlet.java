@@ -34,7 +34,7 @@ public class DormManagerServlet extends BaseServlet {
             request.setAttribute( "mainRight","/WEB-INF/jsp/addDormManager.jsp");
             request.getRequestDispatcher("/WEB-INF/jsp/main.jsp").forward(request,response);
             return;
-        }
+    }
         Map<String, String[]> map = request.getParameterMap();
         //宿管管理的宿舍楼号
         String[] dormBuildIds = request.getParameterValues("dormBuildId");
