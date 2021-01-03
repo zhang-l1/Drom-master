@@ -21,14 +21,15 @@ public class SelectStuServlet  extends BaseServlet{
 
         String keyword = request.getParameter("keyword");
         System.out.println(keyword);
-        User student = userService.findByStuCode(Integer.valueOf(keyword));
-        System.out.println(student);
-        List<User> students = new LinkedList<>();
-        students.add(student);
-        request.setAttribute("students",students);
-        request.setAttribute("mainRight","/WEB-INF/jsp/studentList.jsp");
-        request.getRequestDispatcher("/WEB-INF/jsp/main.jsp").forward(request,response);
-
+        if(keyword!=null){
+            User student = userService.findByStuCode(Integer.valueOf(keyword));
+            System.out.println(student);
+            List<User> students = new LinkedList<>();
+            students.add(student);
+            request.setAttribute("students",students);
+            request.setAttribute("mainRight","/WEB-INF/jsp/studentList.jsp");
+            request.getRequestDispatcher("/WEB-INF/jsp/main.jsp").forward(request,response);
+        }
 
 
     }

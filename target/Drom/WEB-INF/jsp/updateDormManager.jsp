@@ -47,7 +47,7 @@
 </script>
 <script>
     $(function () {
-        $.post("/dorm/dormBuild/findBuildName",{},function (data) {
+        $.post("/Dorm_war_exploded/dormBuild/findBuildName",{},function (data) {
             var lis = "";
             for(var i=0;i<data.length;i++){
                 lis += '<input name="dormBuildId" value="'+data[i].id+'"  style="heigth:14px;vertical-align:top"  type="checkbox" >'+data[i].name+'  &nbsp;';
@@ -106,9 +106,9 @@
                 <tr>
                     <td><font color="red">*</font>修改管理楼栋：</td>
                     <td id="build">
-<%--                        <input name="dormBuildId" value="1"  style="heigth:14px;vertical-align:top"  type="checkbox" >1号宿舍楼  &nbsp;--%>
-<%--                        <input name="dormBuildId" value="2"  style="heigth:14px;vertical-align:top"  type="checkbox" >2号宿舍楼  &nbsp;--%>
-<%--                        <input name="dormBuildId" value="3"  style="heigth:14px;vertical-align:top"  type="checkbox" >3号宿舍楼  &nbsp;--%>
+&lt;%&ndash;                        <input name="dormBuildId" value="1"  style="heigth:14px;vertical-align:top"  type="checkbox" >1号宿舍楼  &nbsp;&ndash;%&gt;
+&lt;%&ndash;                        <input name="dormBuildId" value="2"  style="heigth:14px;vertical-align:top"  type="checkbox" >2号宿舍楼  &nbsp;&ndash;%&gt;
+&lt;%&ndash;                        <input name="dormBuildId" value="3"  style="heigth:14px;vertical-align:top"  type="checkbox" >3号宿舍楼  &nbsp;&ndash;%&gt;
                     </td>
                 </tr>
             </table>

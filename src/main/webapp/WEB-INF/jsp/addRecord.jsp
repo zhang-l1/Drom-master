@@ -34,7 +34,7 @@
         var stuCode =  $("#stuCode").val();
         var flag = true;
         $.ajaxSettings.async = false;
-        $.post("/dorm/record/findOne",{stuCode:stuCode},function (data) {
+        $.post("/Dorm_war_exploded/record/findOne",{stuCode:stuCode},function (data) {
             if(data == null){
                 document.getElementById("error").innerHTML="该学号不存在！请重新输入！";
                  flag =  true;

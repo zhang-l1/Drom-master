@@ -37,7 +37,7 @@
 </script>
 <script>
     $(function () {
-        $.post("/dorm/dormBuild/findBuildName",{},function (data) {
+        $.post("/Dorm_war_exploded/dormBuild/findBuildName",{},function (data) {
             var lis = "";
             for(var i=0;i<data.length;i++){
                 lis += ' <option value="'+data[i].id+'">'+data[i].name+'</option>';
@@ -93,7 +93,8 @@
                     <td><font color="red">*</font>新宿舍楼：</td>
                     <td>
                         <select id="dormBuildId" name="dormBuildId" style="width: 90px;">
-
+                            <option value="1号楼" ${user_manage.sex == "1号楼" ? "selected" : ""}>1号楼</option>
+                            <option value="2号楼" ${user_manage.sex == "2号楼" ? "selected" : ""}>2号楼</option>
                         </select>
                     </td>
                 </tr>
