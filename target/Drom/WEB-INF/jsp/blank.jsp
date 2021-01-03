@@ -1,7 +1,7 @@
 <%--
   Created by IntelliJ IDEA.
-  User: nzp
-  Date: 2020/6/5
+  User: zl
+  Date: 2020/12/29
   Time: 9:34
   To change this template use File | Settings | File Templates.
 --%>
@@ -14,6 +14,7 @@
 
 <div>
     <div class=blank style="padding-top: 100px;padding-left: 100px;">
+        <div style="margin-bottom: 30px">当前在线人数： ${applicationScope.onlineUserNum}</div>
         <font color="gray" size="20">欢迎您登录宿舍管理系统</font>
     </div>
 </div>
